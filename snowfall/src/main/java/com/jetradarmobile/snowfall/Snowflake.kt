@@ -21,9 +21,7 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Paint.Style
-import java.lang.Math.cos
-import java.lang.Math.sin
-import java.lang.Math.toRadians
+import java.lang.Math.*
 
 internal class Snowflake(val params: Params) {
   private var size: Int = 0
@@ -102,6 +100,7 @@ internal class Snowflake(val params: Params) {
   }
 
   fun draw(canvas: Canvas) {
+    val bitmap = this.bitmap
     if (bitmap != null) {
       canvas.drawBitmap(bitmap, positionX.toFloat(), positionY.toFloat(), paint)
     } else {
