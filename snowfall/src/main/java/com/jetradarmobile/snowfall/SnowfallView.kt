@@ -40,6 +40,7 @@ class SnowfallView(context: Context, attrs: AttributeSet) : View(context, attrs)
   private val snowflakesFadingEnabled: Boolean
   private val snowflakesAlreadyFalling: Boolean
   private var highlightSnowflakes: HighlightSnowflakes? = null
+  var highlightSnowflakeSize: Int
 
   private lateinit var updateSnowflakesThread: UpdateSnowflakesThread
   private var snowflakes: Array<Snowflake>? = null
@@ -58,6 +59,7 @@ class SnowfallView(context: Context, attrs: AttributeSet) : View(context, attrs)
       snowflakeSpeedMax = a.getInt(R.styleable.SnowfallView_snowflakeSpeedMax, DEFAULT_SNOWFLAKE_SPEED_MAX)
       snowflakesFadingEnabled = a.getBoolean(R.styleable.SnowfallView_snowflakesFadingEnabled, DEFAULT_SNOWFLAKES_FADING_ENABLED)
       snowflakesAlreadyFalling = a.getBoolean(R.styleable.SnowfallView_snowflakesAlreadyFalling, DEFAULT_SNOWFLAKES_ALREADY_FALLING)
+      highlightSnowflakeSize = snowflakeSizeMaxInPx
     } finally {
       a.recycle()
     }
